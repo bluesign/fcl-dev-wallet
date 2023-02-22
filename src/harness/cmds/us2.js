@@ -276,9 +276,7 @@ export const CMD = async () => {
   try {
     const res = await fcl.currentUser().signUserMessage(MSG)
 
-    return verifyUserSignatures(MSG, res)
-      .then(yup(LABEL))
-      .catch(nope(LABEL))
+    return verifyUserSignatures(MSG, res).then(yup(LABEL)).catch(nope(LABEL))
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log(error)
