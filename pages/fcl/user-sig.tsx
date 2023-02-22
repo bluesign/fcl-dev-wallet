@@ -5,7 +5,8 @@ import AuthzDetailsTable, {AuthzDetailsRow} from "components/AuthzDetailsTable"
 import Dialog from "components/Dialog"
 import {useEffect, useState} from "react"
 import {sign} from "src/crypto"
-import {Box, Themed} from "theme-ui"
+import {Box} from "theme-ui"
+import {Themed} from "@theme-ui/mdx"
 import getWalletConfig from "hooks/useConfig"
 
 type AuthReadyResponseSignable = {
