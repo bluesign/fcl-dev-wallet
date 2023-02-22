@@ -13,11 +13,7 @@ async function isInitialized(flowAccountAddress: string): Promise<boolean> {
       .send([fcl.getAccount(flowAccountAddress)])
       .then(fcl.decode)
 
-    if (account["contracts"]["FCL"]) {
-      return true
-    }
-
-    return false
+    return !!account["contracts"]["FCL"]
   } catch (error) {
     return false
   }
