@@ -251,7 +251,7 @@ async function verifyUserSignatures(message, compSigs, opts = {}) {
 
   for (const el of compSigs) {
     signaturesArr.push(el.signature)
-    keyIndices.push(el.keyId)
+    keyIndices.push(el.keyId.toString())
   }
 
   return fcl.query({
