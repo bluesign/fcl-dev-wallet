@@ -8,7 +8,7 @@ import Dialog from "components/Dialog"
 import {AuthzContextProvider} from "contexts/AuthzContext"
 import useConfig from "hooks/useConfig"
 import useAuthzContext from "hooks/useAuthzContext"
-import {useState} from "react"
+//import {useState} from "react"
 import {sign} from "src/crypto"
 
 function AuthzContent({
@@ -20,13 +20,11 @@ function AuthzContent({
   flowAccountPrivateKey: string
   avatarUrl: string
 }) {
-  const {isExpanded, codePreview} = useAuthzContext()
-  const {currentUser, proposalKey, message} = useAuthzContext()
-  const [isLoading, setIsLoading] = useState(false)
+  const {isExpanded, codePreview, currentUser, proposalKey, message} =
+    useAuthzContext()
+  //const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const onApprove = () => {
-    setIsLoading(true)
-
     const signature = sign(flowAccountPrivateKey, message)
 
     WalletUtils.approve(
@@ -36,6 +34,7 @@ function AuthzContent({
         signature
       )
     )
+    //setIsLoading(true)
   }
 
   const onDecline = () => WalletUtils.close()
@@ -55,7 +54,7 @@ function AuthzContent({
         !isExpanded && (
           <AuthzActions
             onApprove={onApprove}
-            isLoading={isLoading}
+            isLoading={false}
             onDecline={onDecline}
           />
         )

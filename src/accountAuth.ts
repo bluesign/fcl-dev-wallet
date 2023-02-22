@@ -33,7 +33,6 @@ function proveAuthn(
 }
 
 export async function refreshAuthn(
-  baseUrl: string,
   flowAccountPrivateKey: string,
   address: string,
   keyId: number,
@@ -50,7 +49,6 @@ export async function refreshAuthn(
   const compSig = new WalletUtils.CompositeSignature(address, keyId, signature)
 
   const services = buildServices({
-    baseUrl,
     address,
     nonce,
     scopes,
@@ -68,7 +66,6 @@ export async function refreshAuthn(
 }
 
 export async function chooseAccount(
-  baseUrl: string,
   flowAccountPrivateKey: string,
   account: Account,
   scopes: Set<string>,
@@ -83,6 +80,7 @@ export async function chooseAccount(
     const {addr, signature} = proveAuthn(
       flowAccountPrivateKey,
       address,
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       keyId!,
       nonce,
       appIdentifier
@@ -91,7 +89,6 @@ export async function chooseAccount(
   }
 
   const services = buildServices({
-    baseUrl,
     address,
     nonce,
     scopes,

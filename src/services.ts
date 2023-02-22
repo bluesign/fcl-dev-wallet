@@ -55,7 +55,6 @@ const entry = (
 ) => scopes.has(key) && [key, value]
 
 export const buildServices = ({
-  baseUrl,
   address,
   nonce,
   scopes,
@@ -63,7 +62,6 @@ export const buildServices = ({
   keyId,
   includeRefresh = false,
 }: {
-  baseUrl: string
   address: string
   nonce: string | undefined
   scopes: Set<string>
@@ -71,6 +69,7 @@ export const buildServices = ({
   keyId?: number
   includeRefresh?: boolean
 }) => {
+  const baseUrl = global.location.protocol + "//" + global.location.host
   const services: AuthResponseService[] = [
     {
       f_type: "Service",

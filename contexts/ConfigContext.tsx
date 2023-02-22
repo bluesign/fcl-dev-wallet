@@ -4,11 +4,9 @@ import {Spinner} from "../components/Spinner"
 
 interface RuntimeConfig {
   flowAvatarUrl: string
-  baseUrl: string
   contractFungibleToken: string
   contractFlowToken: string
   contractFUSD: string
-  contractFCLCrypto: string
   flowAccountAddress: string
   flowAccountPrivateKey: string
   flowAccountPublicKey: string
@@ -19,8 +17,6 @@ interface RuntimeConfig {
 }
 
 const defaultConfig = {
-  baseUrl: "http://localhost:8701",
-  contractFCLCrypto: "0xf8d6e0586b0a20c7",
   contractFUSD: "0xf8d6e0586b0a20c7",
   contractFlowToken: "0x0ae53cb6e3f42a79",
   contractFungibleToken: "0xee82856bf20e2aa6",
