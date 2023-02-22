@@ -1,5 +1,7 @@
 /** @jsxImportSource theme-ui */
+
 import {Box} from "theme-ui"
+import React from "react"
 
 export const FieldError = ({children}: {children: React.ReactNode}) => {
   const style = {

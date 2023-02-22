@@ -7,6 +7,12 @@
   ],
   "plugins": ["react", "prettier", "react-hooks"],
   "rules": {
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": ["sx"]
+      }
+    ],
     "react/react-in-jsx-scope": "off",
     "no-console": "warn"
   },

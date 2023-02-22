@@ -16,8 +16,8 @@ export const CMD = async () => {
       }
     `,
     args: (arg, t) => [
-      arg(6, t.Int),
-      arg(7, t.Int),
+      arg("6", t.Int),
+      arg("7", t.Int),
       arg('0xba1132bc08f82fe2', t.Address),
     ],
     limit: 50,

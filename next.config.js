@@ -1,4 +1,12 @@
-module.exports = {
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  //disable: process.env.NODE_ENV === "development",
+  skipWaiting: true,
+})
+
+module.exports = withPWA({
+  reactStrictMode: true,
   productionBrowserSourceMaps: true,
   async headers() {
     return [
@@ -43,4 +51,4 @@ module.exports = {
     contractFUSD: process.env.CONTRACT_FUSD,
     contractFCLCrypto: process.env.CONTRACT_FCL_CRYPTO,
   },
-}
+})
